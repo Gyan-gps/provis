@@ -17,7 +17,7 @@ const Cart = () => {
   return (
     <div className="d-flex">
       <div className="w-75">
-        {products.products?.map((data) => {
+        {products.products.length<=0?<h1>Cart is Empty</h1>:products.products.map((data) => {
           return (
             <div key={data.id} className="d-flex">
               <div className="img">

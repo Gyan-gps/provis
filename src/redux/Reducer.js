@@ -12,11 +12,11 @@ const reducer = (state=initial,action)=>{
                 }
                 localStorage.setItem("cart",JSON.stringify(state))
             }
-            console.log(state,bool);
+            console.log(state,action.payload.price);
             return state;
     
         case "REMOVE_FROM_CART":
-            let item=state.products[action.payload.id].item;
+            let item=state.products.filter((data)=>data.id===action.payload.id)[0].item;
             console.log(item);
             state.products=state.products.filter((data)=>data.id!==action.payload.id);
             // console.log(state.products[0].id!==action.id)
