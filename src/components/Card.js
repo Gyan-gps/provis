@@ -28,6 +28,7 @@ function Cards({ data }) {
       type: action.REMOVE_FROM_CART,
       payload: data,
     });
+    setBool(false)
   };
   return (
     <div key={data.id} className="card">
