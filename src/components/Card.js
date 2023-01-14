@@ -48,11 +48,11 @@ function Cards({ data }) {
         {data.price} $
       </div>
       {bool ? (
-        <button className="card-btn" onClick={() => handleRemove(data)}>
+        <button className="card-btn bg-danger" onClick={() => handleRemove(data)}>
           Remove From Cart
         </button>
       ) : (
-        <button className="card-btn" onClick={() => handleAdd(data)}>
+        <button className="card-btn bg-success" onClick={() => handleAdd(data)}>
           Add to Cart
         </button>
       )}

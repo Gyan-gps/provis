@@ -19,25 +19,25 @@ const Cart = () => {
       <div className="w-75">
         {products.products.length<=0?<h1>Cart is Empty</h1>:products.products.map((data) => {
           return (
-            <div key={data.id} className="d-flex">
+            <div key={data.id} className="d-flex m-2 p-3" style={{border:"1px solid brown",borderRadius:"8px", backgroundColor:"darkseagreen"}}>
               <div className="img">
-                <img src={data.image} alt={data.title} height="208" />
+                <img src={data.image} alt={data.title} height="240" />
               </div>
-              <div className="w-75 items-right">
+              <div className="w-25 d-flex flex-column justify-content-evenly m-auto">
                 <div>
                   <b>Title: </b>
                   {data.title.substring(0, 20)}...
                 </div>
                 <div>
                   <b>Qty: </b>
-                  <button onClick={()=>{
+                  <button className="m-2" style={{backgroundColor:"gray",border:"none",borderRadius:"50%"}} onClick={()=>{
                     dispatch({
                       type:action.DECREASE_ITEM,
                       payload:data
                     })
                   }}>-</button>
                   {data.item}
-                  <button onClick={()=>{
+                  <button className="m-2" style={{backgroundColor:"gray",border:"none",borderRadius:"50%"}} onClick={()=>{
                     dispatch({
                       type:action.INCREASE_ITEM,
                       payload:data
@@ -48,7 +48,7 @@ const Cart = () => {
                   <b>Price: </b>
                   {data.price} $
                 </div>
-                <button className="card-btn" onClick={() => handleRemove(data)}>
+                <button className="card-btn bg-danger" onClick={() => handleRemove(data)}>
                   Remove From Cart
                 </button>
               </div>
@@ -56,7 +56,7 @@ const Cart = () => {
           );
         })}
       </div>
-      <div className="w-25">
+      <div className="w-25 m-2 p-2">
         <h2>Summary</h2>
         <div>
           <b>Price: </b> {products.summary.totalPrice}$
