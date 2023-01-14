@@ -15,7 +15,7 @@ const reducer = (state = initial, action) => {
           totalPrice:
             parseInt(state.summary.totalPrice) + parseInt(action.payload.price),
         };
-        // localStorage.setItem("cart", JSON.stringify(state));
+        localStorage.setItem("cart", JSON.stringify(state));
       }
       console.log(state, action.payload.price);
       return state;
