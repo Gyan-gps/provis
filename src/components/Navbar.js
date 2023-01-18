@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 function NavBar() {
   return (
     <>
-      <div style={{ backgroundColor: "GrayText" }}>
+      <div style={{ backgroundColor: "black",fontSize:"x-large" }}>
         <div
           className=""
           style={{
@@ -15,8 +15,8 @@ function NavBar() {
             padding: "14px 140px",
           }}
         >
-          <Link to="/"><div>Provis</div></Link>
-          <Link to="/cart"><div>Cart</div></Link>
+          <Link className='text-decoration-none' to="/"><div>Provis</div></Link>
+          <Link className='text-decoration-none' to="/cart"><div>Cart</div></Link>
         </div>
       </div>
     </>
