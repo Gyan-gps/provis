@@ -9,7 +9,8 @@ const reducer = (state = initial, action) => {
   switch (action.type) {
     case "ADD_TO_CART":
       let bool = state.products.filter((e) => e.id === action.payload.id);
-      if (bool) {
+      console.log(bool.length);
+      if (bool.length===0) {
         state.products.push({ ...action.payload, item: 1 });
         state.summary = {
           totalPrice:
